@@ -83,11 +83,11 @@ public class EdgeConvertGUI {
 	 * Shows the GUI
 	 */
 	public void showGUI() {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); //use the OS native LAF, as opposed to default Java LAF
-		} catch (Exception e) {
-			System.out.println("Error setting native LAF: " + e);
-		}
+//		try {
+//			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); //use the OS native LAF, as opposed to default Java LAF
+//		} catch (Exception e) {
+//			System.out.println("Error setting native LAF: " + e);
+//		}
 
 		new DefineTableScreen(); // Show define table screen
 		new DefineRelationScreen(); // Show define relation screen

@@ -163,7 +163,7 @@ public class EdgeMenuListener implements ActionListener {
 			jtp.setSize(1200, 850);
 			jtp.setPreferredSize(new Dimension(1200, jtp.getPreferredSize().height));
 
-			JOptionPane.showMessageDialog(null, jtp);
+			JOptionPane.showMessageDialog(null, jtp, "FAQ", JOptionPane.INFORMATION_MESSAGE);
 		}
 
 		/**
@@ -191,7 +191,7 @@ public class EdgeMenuListener implements ActionListener {
 			jtp.setSize(1200, 850);
 			jtp.setPreferredSize(new Dimension(1200, jtp.getPreferredSize().height));
 
-			JOptionPane.showMessageDialog(null, jtp);
+			JOptionPane.showMessageDialog(null, jtp, "Instructions", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }

@@ -61,7 +61,11 @@ public class CreateDDLMySQL extends EdgeConvertCreateDDL {
 						if (currentField.getFieldBound() != 0) {
 							numForeignKey++;
 						}
-						sb.append(",\r\n"); //end of field
+
+						if(nativeFieldCount <  nativeFieldCount-1){
+							sb.append(","); // end of all fields except final field
+						}
+						sb.append("\r\n"); // end of field
 					}
 					if (numPrimaryKey > 0) { //table has primary key(s)
 						sb.append("CONSTRAINT " + tables[tableCount].getName() + "_PK PRIMARY KEY (");

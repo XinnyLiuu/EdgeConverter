@@ -6,9 +6,9 @@ import screen.DefineRelationScreen;
 import screen.DefineTableScreen;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
-import static listener.CreateDDLButtonListener.pw;
 import static listener.CreateDDLButtonListener.saveFile;
 import static screen.DefineRelationScreen.*;
 import static screen.DefineTableScreen.*;
@@ -51,31 +51,15 @@ public class EdgeConvertGUI {
 		} else {
 			return;
 		}
+
 		writeSave();
 	}
 
 	public static void writeSave() {
-		if (saveFile != null) {
-			try {
-				pw = new PrintWriter(new BufferedWriter(new FileWriter(saveFile, false)));
-				//write the identification line
-				pw.println(EdgeConvertFileParser.SAVE_ID);
-				//write the tables
-				pw.println("#Tables#");
-				for (int i = 0; i < tables.length; i++) {
-					pw.println(tables[i]);
-				}
-				//write the fields
-				pw.println("#Fields#");
-				for (int i = 0; i < fields.length; i++) {
-					pw.println(fields[i]);
-				}
-				//close the file
-				pw.close();
-			} catch (IOException ioe) {
-				System.out.println(ioe);
-			}
-			dataSaved = true;
+		try {
+			new CreateSQLFileWriter(fields, tables).makeIt();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

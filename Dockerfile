@@ -29,4 +29,4 @@ WORKDIR /edgeconvert/target
 
 USER developer
 
-CMD ["java", "-jar", "EdgeConverter-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "EdgeConverter-1.0-SNAPSHOT-jar-with-dependencies.jar", "-Djava.awt.headless=true"]
